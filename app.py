@@ -15,10 +15,10 @@ while True:
     # Recognition faces
     list_face = face_recognition.process(image)
     
-    if list_face.detection:
-        for face in list_face.detection:
-            draw.draw_detection(image, face)
-        cv2.imgshow('Faces:', image)
+    if list_face.detections:
+        for detection  in list_face.detections:
+            draw.draw_detection(image, detection)
+        cv2.imshow('Faces:', image)
     
     # When press ESC, quit app
     if cv2.waitKey(5) == 27:
